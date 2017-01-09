@@ -13,6 +13,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends Activity {
     DownThread mThread;
@@ -26,6 +29,9 @@ public class MainActivity extends Activity {
         // {"result":"true","temp":"4.7","time":"2017-01-03 19:52:19"}
         mThread = new DownThread(serverAddr);
         mThread.start();
+
+        TextView dateText = (TextView)findViewById(R.id.date);
+        dateText.setText(getDateString());
     }
 
     class DownThread extends Thread {
@@ -76,4 +82,12 @@ public class MainActivity extends Activity {
             result.setText(temperature);
         }
     };
+
+    public String getDateString()
+    {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy. MM. dd.", Locale.KOREA);
+        String str_date = df.format(new Date());
+
+        return str_date;
+    }
 }
