@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
             try {
                 JSONObject order = new JSONObject(mThread.mResult);
                 temperature += order.getString("temp");
-                temperature += "℃";
+                temperature += " ℃";
             } catch(JSONException e) {;}
             result.setText(temperature);
         }

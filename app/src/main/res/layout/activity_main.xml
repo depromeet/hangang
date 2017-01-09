@@ -6,9 +6,31 @@
     android:background="@drawable/bg">
 
     <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:text="2017. 01. 10."
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        />
+    <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/date"
+        android:textColor="#00dade"
+        android:textSize="36dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/temperature_bar"
+        />
+
 
 </RelativeLayout>
